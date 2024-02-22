@@ -1,5 +1,4 @@
 const { merge } = require("webpack-merge");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const commonConfig = require("./webpack.config");
 const { ModuleFederationPlugin } = require("webpack").container;
 
@@ -20,9 +19,6 @@ const devConfig = {
         marketing: "marketing@http://localhost:8081/remoteEntry.js",
       },
       shared: packageJSON.dependencies,
-    }),
-    new HtmlWebpackPlugin({
-      template: "./public/index.html",
     }),
   ],
   devtool: "source-map",

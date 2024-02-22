@@ -1,5 +1,4 @@
 const { merge } = require("webpack-merge");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const commonConfig = require("./webpack.config");
 const { ModuleFederationPlugin } = require("webpack").container;
 
@@ -18,9 +17,6 @@ const devConfig = {
       exposes: {
         "./MarketingApp": "./src/bootstrap",
       },
-    }),
-    new HtmlWebpackPlugin({
-      template: "./public/index.html",
     }),
   ],
   devtool: "source-map",
